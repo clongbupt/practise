@@ -31,7 +31,7 @@ public:
     for (int i = 0; i < 4; i ++) {
       newx = x + dirx[i];
       newy = y + diry[i];
-      if(newx > 0 && newx < rows && newy > 0 && newy < cols && ! visited[newx][newy]){
+      if(newx >= 0 && newx < rows && newy >= 0 && newy < cols && ! visited[newx][newy]){
         if (board[newx][newy] == word[step]) {
           visited[newx][newy] = true;
           if(dfs(newx, newy, step+1, board, rows, cols, word, len, visited)) {
