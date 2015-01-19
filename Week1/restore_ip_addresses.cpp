@@ -9,7 +9,7 @@ class Solution{
 
     void dfs(string s, int start, int step, string tmp, vector<string> & result) {
       if ( s.size() == start && step == 4) {
-        ip.resize(ip.size() - 1);
+        tmp.resize(tmp.size() - 1);
         result.push_back(tmp);
         return;
       }
