@@ -8,22 +8,16 @@ public:
     ListNode * slow, * fast;
     
     slow = head;
-    fast = head->next;
+    fast = head;
 
-    while(fast && slow != fast) {
+    while(fast && fast -> next) {
       slow = slow -> next;
-      fast = fast -> next;
-      if (!fast){
-        return false;
+      fast = fast -> next -> next;
+      if (slow == fast) {
+        return true;
       }
-      fast = fast -> next;
     }
 
-    if (slow == fast) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return false;
   }
 };
